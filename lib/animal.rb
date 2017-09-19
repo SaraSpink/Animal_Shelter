@@ -10,7 +10,7 @@ class Animal
   end
 
   def self.all
-  returned_animals = DB.exec("SELECT * FROM animal;")
+  returned_animals = DB.exec("SELECT * FROM animal ORDER BY admittance_date;")
   animals = []
     returned_animals.each() do |animal|
       name = animal.fetch("name")

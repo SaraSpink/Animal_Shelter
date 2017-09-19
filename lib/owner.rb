@@ -11,7 +11,7 @@ class Owner
     end
 
     def self.all
-    returned_owners = DB.exec("SELECT * FROM owner")
+    returned_owners = DB.exec("SELECT * FROM owner ORDER BY breed;")
     owners = []
     returned_owners.each() do |owner|
       name = owner.fetch("name")
