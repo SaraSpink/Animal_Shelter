@@ -18,7 +18,6 @@ class Owner
       phone = owner.fetch("phone")
       type = owner.fetch("type")
       breed = owner.fetch("breed")
-
       owners.push(Owner.new({:name => name, :phone => phone, :type => type, :breed => breed}))
     end
     owners
