@@ -1,9 +1,10 @@
 <h1>Available Pets</h1>
 
 <form action="/pet" method="post">
-<h3>Add a new pet:</h3>
-  <label for="add_name">Enter pet's name:</label>
-  <input id="add_name" name="add_name" type="text">
+<h3>Add a new pet:</h3
+  <div class="from-group">
+  <label for="name">Enter pet's name:</label>
+  <input id="name" name="name" type="text">
 
   <label for="gender">Gender:</label>
   <input id="gender" name="gender" type="text">
@@ -18,4 +19,9 @@
   <input id="breed" name="breed" type="text">
 
   <button type="submit">Add this pet!</button>
+</div>
 </form>
+
+<% @new_animal.each do |animal| %>
+  <h4><a href="/pet/<%= animal.name %>"><%= animal.name %> <%= animal.type %></a></h4>
+<% end %>

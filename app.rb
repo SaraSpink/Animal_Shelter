@@ -13,6 +13,7 @@ get('/') do
 end
 
 get('/pet') do
+  @new_animal = Animal.all()
   erb(:pet)
 end
 
