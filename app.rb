@@ -26,6 +26,14 @@ post('/pet') do
 end
 
 get('/owner') do
-  @owners = Owner.all()
+  @new_owner = Owner.all()
+  erb(:owner)
+end
+
+post('/owner') do
+  @new_owner = Owner.all()
+  new_client = Owner.new({:name => params.fetch("name"), :phone => params.fetch("phone"), :type => params.fetch("type"), :breed => params.fetch("breed")})
+  new_client.save
+  @new_owner = Owner.all()
   erb(:owner)
 end

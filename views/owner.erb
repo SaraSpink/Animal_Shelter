@@ -1,0 +1,24 @@
+<h1>Potential Owners</h1>
+
+<form action="/owner" method="post">
+<h3>Add a new potential owner:</h3
+  <div class="from-group">
+  <label for="name">Enter owner's name:</label>
+  <input id="name" name="name" type="text">
+
+  <label for="phone">Phone number:</label>
+  <input id="phone" name="phone" type="text">
+
+  <label for="type">Type of animal seeking:</label>
+  <input id="type" name="type" type="text">
+
+  <label for="breed">Breed seeking:</label>
+  <input id="breed" name="breed" type="text">
+
+  <button type="submit">Add this potential owner!</button>
+</div>
+</form>
+
+<% @new_owner.each do |owner| %>
+  <h4><a href="/owner/<%= owner.name %>"><%= owner.name %> <%= owner.breed %></a></h4>
+<% end %>
